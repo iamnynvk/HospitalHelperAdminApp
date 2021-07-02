@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".RequestBlood">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <RelativeLayout
+            android:id="@+id/main_relative"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/txt_relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Request-Blood Details"
+                    android:textColor="@color/title_color"
+                    android:layout_marginStart="@dimen/size_20dp"
+                    android:layout_marginTop="@dimen/size_10dp"
+                    android:textSize="@dimen/size_17dp"
+                    android:fontFamily="@font/montserratmedium"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/recycleview_relative"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/txt_relative"
+                android:layout_marginTop="@dimen/size_10dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/size_10dp"/>
+
+            </RelativeLayout>
+            </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
+

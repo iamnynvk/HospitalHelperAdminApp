@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeScreen"
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <RelativeLayout
+            android:id="@+id/rlTools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white_shadow_color"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:title="Hospital Helper"
+                app:subtitle="Admin"
+                app:titleTextColor="@color/title_color"
+                app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textAlignment="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:subtitleTextColor="@color/title_color"
+                tools:layout_editor_absoluteX="0dp"
+                app:titleMarginStart="@dimen/size_20dp">
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </RelativeLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:layout_below="@id/rlTools"
+            android:layout_width="match_parent"
+            android:id="@+id/tablayout"
+            android:layout_height="wrap_content"
+            android:background="@color/white_shadow_color"
+            app:tabIndicatorColor="@color/title_color"
+            app:tabSelectedTextColor="@color/title_color"
+            tools:ignore="MissingConstraints"
+            app:tabTextColor="@color/colorPrimary"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:layout_below="@id/tablayout"
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/tablayout"
+            tools:ignore="UnknownId" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
