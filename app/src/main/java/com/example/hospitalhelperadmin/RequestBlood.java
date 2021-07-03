@@ -55,51 +55,6 @@ public class RequestBlood extends Fragment {
         recyclerView.setAdapter(recycleviewAdapter);
 
         return view;
-        /*// Product Set Layout
-        final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setHasFixedSize(true);
-
-        mdatabaseref = FirebaseDatabase.getInstance().getReference();
-        mstorageref = FirebaseStorage.getInstance().getReference();
-
-        bloodDetailHolders = new ArrayList<>();
-
-        Blood();
-
-
-        return view;
-    }
-
-    private void Blood() {
-        final Query query = mdatabaseref.child("BloodRequest");
-        query.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    BloodDetailHolder Holder = new BloodDetailHolder();
-                    Holder.setFullname(dataSnapshot.child("fullname").getValue().toString());
-                    Holder.setEmail(dataSnapshot.child("email").getValue().toString());
-                    Holder.setMobileno(dataSnapshot.child("mobilno").getValue().toString());
-                    Holder.setAge(dataSnapshot.child("age").getValue().toString());
-                    Holder.setBloodgroup(dataSnapshot.child("bloodgroup").getValue().toString());
-                    Holder.setGenderbtn(dataSnapshot.child("genderbtn").getValue().toString());
-
-                    bloodDetailHolders.add(Holder);
-                }
-                GridLayoutManager manager = new GridLayoutManager(context,1);
-                recyclerView.setLayoutManager(manager);
-                recycleviewAdapter = new BloodAdapter(context,bloodDetailHolders);
-                recyclerView.setAdapter(recycleviewAdapter);
-                recycleviewAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }*/
     }
 
     @Override
