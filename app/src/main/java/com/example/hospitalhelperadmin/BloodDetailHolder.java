@@ -1,7 +1,7 @@
 package com.example.hospitalhelperadmin;
 
 public class BloodDetailHolder {
-    String age, bloodgroup, email, fullname, genderbtn, mobilno, user;
+    private String age, bloodgroup, email, fullname, genderbtn, mobilno, user;
 
     public BloodDetailHolder() {
     }

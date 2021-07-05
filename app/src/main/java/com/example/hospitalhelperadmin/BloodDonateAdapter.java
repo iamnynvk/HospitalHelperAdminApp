@@ -32,9 +32,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BloodAdapter extends FirebaseRecyclerAdapter<BloodDetailHolder,BloodAdapter.mybloodadapter> {
+public class BloodDonateAdapter extends FirebaseRecyclerAdapter<BloodDetailHolder,BloodDonateAdapter.mybloodadapter> {
 
-    public BloodAdapter(@NonNull FirebaseRecyclerOptions<BloodDetailHolder> options) {
+    public BloodDonateAdapter(@NonNull FirebaseRecyclerOptions<BloodDetailHolder> options) {
         super(options);
     }
 
@@ -50,7 +50,7 @@ public class BloodAdapter extends FirebaseRecyclerAdapter<BloodDetailHolder,Bloo
             @Override
             public void onClick(View v) {
 
-                FirebaseDatabase.getInstance().getReference().child("BloodRequest")
+                FirebaseDatabase.getInstance().getReference().child("BloodDonateRequest")
                         .child(getRef(position).getKey()).removeValue();
             }
         });
@@ -59,7 +59,7 @@ public class BloodAdapter extends FirebaseRecyclerAdapter<BloodDetailHolder,Bloo
             @Override
             public void onClick(View v) {
                 DialogPlus dialogPlus = DialogPlus.newDialog(mybloodadapter.bloodgroup.getContext())
-                        .setContentHolder(new ViewHolder(R.layout.requestbloodupdate))
+                        .setContentHolder(new ViewHolder(R.layout.donatebloodupdate))
                         .setExpanded(true,1100)  // This will enable the expand feature, (similar to android L share dialog)
                         .create();
 
@@ -89,7 +89,7 @@ public class BloodAdapter extends FirebaseRecyclerAdapter<BloodDetailHolder,Bloo
                         map.put("age",age.getText().toString());
                         map.put("bloodgroup",bloodgroup.getText().toString());
 
-                        FirebaseDatabase.getInstance().getReference().child("BloodRequest")
+                        FirebaseDatabase.getInstance().getReference().child("BloodDonateRequest")
                                 .child(getRef(position).getKey()).updateChildren(map)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
